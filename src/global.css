@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 600;
+  color: black;
+  margin: 0 5px;
+}
+
+.container {
+  padding: 0px 20px;
+}
+
+.main-container {
+  margin-top: 20px;
+  display: flex;
+}
+
+.right-container {
+  width: 25%;
+}
+.facebookLike{
+  color: blue;
+}
+.left-container {
+  width: 25%;
+}
+.likeComment{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-size: 30px;
+}
+.likeComment svg{
+  cursor: pointer;
+  margin: 0 20px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #3636361a;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.header img {
+  width: 60px;
+  height: 45px;
+  border-radius: 100%;
+}
+
+.user {
+  height: 45px;
+  width: 25px;
+  cursor: pointer;
+  border-radius: 100%;
+}
+
+.login {
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+form {
+  width: 40%;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  height: 30px;
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+.primary {
+  width: 100%;
+  padding: 7px 0;
+  background: #db73859e;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.border {
+  height: 1px;
+  width: 100%;
+  background-color: #777;
+  margin: 10px 0;
+}
+
+.loginText {
+  font-size: 15px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.loginLink {
+  color: palevioletred;
+}
+
+.error {
+  font-size: 13px;
+  color: red;
+}
+
+@media only screen and (max-width:600px) {
+  form {
+    width: 90%;
+  }
+
+}

@@ -1,0 +1,31 @@
+.container{
+    background: #efefef;
+    padding: 0 40px;
+}
+.banner{
+    width: 98%;
+    height: 250px;
+    display: block;
+    /* position: relative; */
+    margin: auto;
+    border-radius: 13px;
+}
+.proContainer{
+    display: flex;
+    align-items: center;
+    /* position: absolute; */
+    bottom: 150px;
+    /* height: 100%; */
+    width: 60%;
+
+}
+.profilePic{
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    bottom: -24px;
+    left: 80px;
+}
+.info{
+ margin: 0 20px;
+}

@@ -1,0 +1,61 @@
+.container {
+    margin: 25px 0;
+    background-color: #a1a1a138;
+    padding: 10px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+    align-items: center;
+}
+
+.user {
+    height: 45px;
+    width: 55px;
+    cursor: pointer;
+    border-radius: 100%;
+}
+
+.class {
+    width: 90%;
+    height: 30px;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.modal {
+    background-color: beige;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.form {
+    display: block;
+    margin: auto;
+}
+
+.textFild {
+    display: block;
+}
+
+.postFild {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media only screen and (max-width:600px){
+    .textFild{
+        width: 90%;
+        margin: auto;
+    }
+}

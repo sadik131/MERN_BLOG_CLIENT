@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../../assets/logo.jpg';
 import unUser from '../../assets/user.jpg';
 import { FaUserCircle } from 'react-icons/fa';
-
 import { Link } from 'react-router-dom';
 import { useGlobalContex } from '../../hook/useGlobalContext';
 import UserImage from '../userImage';
 
 const Nav = () => {
-    const { user, setuser } = useGlobalContex()
+    const { user, setuser, setWords } = useGlobalContex()
 
     // logout funtion
     const signOut = (ev) => {
@@ -20,13 +19,14 @@ const Nav = () => {
     return (
         <header className='header'>
             <img src={logo} alt="" />
+            <input type="text" placeholder='sarch..' className='sarchBar' onChange={(e) => setWords(e.target.value)} />
             <nav>
                 <Link to="/">Home</Link>
                 {user && <Link to="/profile">Profile</Link>}
                 {user ? <button onClick={signOut}>LogOut</button> : <Link to="/login">Login</Link>}
             </nav>
             <div>
-               <UserImage></UserImage>
+                <UserImage></UserImage>
             </div>
         </header>
     );

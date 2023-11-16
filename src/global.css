@@ -13,39 +13,57 @@ a {
 }
 
 .container {
+  width: 50%;
   padding: 0px 20px;
 }
 
 .main-container {
-  margin-top: 20px;
   display: flex;
 }
 
 .right-container {
+  position: sticky;
   width: 25%;
 }
-.facebookLike{
+
+
+.facebookLike {
   color: blue;
 }
+
 .left-container {
   width: 25%;
 }
-.likeComment{
+
+.likeComment {
   display: flex;
   justify-content: space-between;
   padding: 20px;
   font-size: 30px;
 }
-.likeComment svg{
+
+.likeComment svg {
   cursor: pointer;
   margin: 0 20px;
 }
+.sarchBar{
+  width: 350px;
+  padding: 10px;
+  font: 17px;
+  height: 25px;
+  border-radius: 10px;
+  border: none;
+}
 .header {
   display: flex;
+  height: 60px;
+  position: sticky;
+  top: 0;
   align-items: center;
-  background-color: #3636361a;
+  background-color: #e0dbdb;
   justify-content: space-between;
   padding: 10px;
+  z-index: 10;
 }
 
 .header img {

@@ -1,0 +1,48 @@
+.notification{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    gap: 15px;
+    padding: 15px 10px;
+}
+.text{
+    display: flex;
+    align-items: center;
+}
+.text img{
+    object-fit: cover;
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+}
+.ads img{
+    height: 200px;
+    width:100%;
+    border-radius: 10px;
+}
+.friendList{
+    margin: 10px 0;
+    margin-top: 10px;
+}
+.friend{
+    position: relative;
+    margin: 20px 0;
+}
+.friend .active{
+    position: absolute;
+    top: 0;
+    left: 35px;
+    height: 15px;
+    width: 15px;
+    border: 1px solid white;
+    background-color: rgb(20, 213, 20);
+    border-radius: 50%;
+}
+.friend img{
+    height: 45px;
+    width: 50px;
+    border-radius: 100%;
+}
+.friend h3{
+    margin: 0 10px;
+}

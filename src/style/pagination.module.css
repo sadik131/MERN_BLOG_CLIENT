@@ -1,0 +1,13 @@
+.listItel{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 10px 0;
+}
+.pageLink{
+    border: 1px solid;
+    font-size: 20px;
+    padding: 0 5px;
+    margin: 0 2px;
+    cursor: pointer;
+}

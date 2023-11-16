@@ -1,0 +1,89 @@
+.container {
+    box-shadow: 0px -1px 5px 4px rgb(170 170 170 / 75%);
+    padding: 10px;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.userImg {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+.postFile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.postImg {
+    position: relative;
+    margin: 10px 0;
+    width: 100%;
+    height: 250px;
+    border-radius: 30px;
+}
+
+.closeSwg {
+    /* position: absolute; */
+    top: 20px;
+    right: 20px;
+}
+
+.postFile input {
+    height: 66px;
+    border: none;
+    width: 100%;
+}
+
+.postFile input:focus {
+    outline: none;
+}
+
+.row {
+    height: 2px;
+    background-color: #777;
+    width: 95%;
+    margin: 10px auto;
+}
+
+.buttons {
+    display: flex;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 10px 10px;
+}
+
+.button svg {
+    margin: 0 5px;
+    font-size: 20px;
+}
+
+.imageFile {
+    color: rgb(224, 161, 44);
+}
+
+.file {
+    color: rgb(27, 27, 248);
+}
+
+.location {
+    color: green;
+}
+
+.emoji {
+    color: yellow;
+}
+
+.sharebtn {
+    cursor: pointer;
+    padding: 2px 15px;
+    border: none;
+    background-color: rgba(33, 133, 33, 0.88);
+    color: white;
+}

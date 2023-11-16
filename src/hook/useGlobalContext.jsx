@@ -11,6 +11,10 @@ const AppProvider = ({ children }) => {
     const [loader, setLoader] = useState(false)
     const [file, setFile] = useState(null)
     const [post, setPost] = useState("")
+    const [words, setWords] = useState("")
+
+
+
 
     // load user data useing store token
     const jwToken = localStorage.getItem('accessToken');
@@ -19,7 +23,7 @@ const AppProvider = ({ children }) => {
         loadUser()
     }, [])
 
-    const loadUser = () =>{
+    const loadUser = () => {
         if (jwToken) {
             fetch("http://localhost:5000/user", {
                 method: "GET",
@@ -30,7 +34,6 @@ const AppProvider = ({ children }) => {
             })
                 .then(res => res.json())
                 .then(result => {
-                    console.log(result)
                     setuser(result[0])
                     setName(result[0].name)
                 })
@@ -42,7 +45,7 @@ const AppProvider = ({ children }) => {
     }
 
     const values = {
-        user, setuser, error, seterror, token, loadUser,settoken, name, setName, loader, setLoader, file, setFile, post, setPost
+        user, setuser, error, words, setWords, seterror, token, loadUser, settoken, name, setName, loader, setLoader, file, setFile, post, setPost
     }
     return <ReactContex.Provider value={values}>{children}</ReactContex.Provider>
 }

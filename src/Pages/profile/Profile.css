@@ -1,0 +1,46 @@
+.leftContainer {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+.feedContainer{
+    width: 70%;
+    padding: 10px;
+}
+
+
+
+/* .container {
+    width: 100% !important;
+    background: #efefef;
+    padding: 0 40px;
+}
+
+
+
+.feed-container {
+    width: 90%;
+}
+
+.banner {
+    width: 98%;
+    height: 250px;
+    display: block;
+    margin: auto;
+    border-radius: 13px;
+}
+
+
+
+.profilePic {
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    bottom: -24px;
+    left: 80px;
+}
+
+.info {
+    margin: 0 20px;
+} 
+*/

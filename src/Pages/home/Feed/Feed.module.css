@@ -1,0 +1,64 @@
+.user {
+    margin: 10px;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+}
+
+.postContainer {
+    border-radius: 10px;
+    background: #8080804d;
+    margin: 10px 0;
+}
+
+.postCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 10px;
+}
+
+.post {
+    margin: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.img {
+    height: 350px;
+    width: 100%;
+    margin-top: 23px;
+    border-radius: 5%;
+
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+}
+
+.button {
+    padding: 5px 17px;
+    border-radius: 19px;
+    background: transparent;
+    border: 1px solid;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.button:nth-child(1) {
+    background-color: red;
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .post {
+        display: block;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .img {
+        width: 100%;
+    }
+}

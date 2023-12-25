@@ -26,6 +26,7 @@ export default function Banner() {
       },
     };
     const { data } = await axios.post("http://localhost:5000/upload", fromdata, config)
+    console.log(data)
     if (data) {
       fetch("http://localhost:5000/api/register", {
         method: "PATCH",

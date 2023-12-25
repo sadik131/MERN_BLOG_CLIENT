@@ -5,17 +5,23 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useGlobalContex } from '../hook/useGlobalContext'
 import SideBar from './home/sidebar/SideBar'
 import Feed from './home/Feed/Feed'
+import io, { Socket } from "socket.io-client"
 import PostShare from '../components/postShare/PostShare'
 
 export default function SingelPost() {
 
+    const soket = io.connect("http://localhost:5000")
     const { id } = useParams()
     const { user } = useGlobalContex()
     const { loader, setLoader } = useGlobalContex()
     const [data, setData] = useState([])
     const [update, setUpdate] = useState(false)
     const navigate = useNavigate()
-    const [info, setInfo] = useState({ text: "", postImg: "", user: "" ,id:""})
+    const [comment, setComment] = useState([])
+    const [commentRealTime, setCommentRealTime] = useState([])
+    const [comText, setComText] = useState("")
+
+    const [info, setInfo] = useState({ text: "", postImg: "", user: "", id: "" })
 
     useEffect(() => {
         fetchPost(id)
@@ -57,9 +63,37 @@ export default function SingelPost() {
     const handelUpdate = () => {
         setUpdate(true)
         const editDoc = data[0]
-        setInfo({ text: editDoc.text, postImg: editDoc.postImg, user: editDoc._id ,id})
+        setInfo({ text: editDoc.text, postImg: editDoc.postImg, user: editDoc._id, id })
     }
-        // console.log(info)
+
+    // handel comment section
+    const handelComment = async () => {
+        if (comText) {
+            const comm = {
+                text: comText,
+                postBy: user?._id
+            }
+
+            const config = {
+                headers: {
+                    'content-type': 'application/json',
+                },
+            };
+
+            const { data } = await axios.post(`http://localhost:5000/api/post/comment/${id}`, comm, config)
+            setComment(data.post.comment)
+            setComText("")
+            soket.emit("comment", data.post.comment)
+
+        }
+    }
+    useEffect(() => {
+        soket.on("newComment", (msg) => {
+            setCommentRealTime(msg)
+        })
+    }, [])
+
+    let uiComment = commentRealTime.length > 0 ? setCommentRealTime : data[0]?.comment
 
     return (
         <div className={classes.container}>
@@ -76,6 +110,22 @@ export default function SingelPost() {
                     <button onClick={() => handelUpdate(id)}>Update</button>
                 </div>
             }
+            <div className={classes.commContainer}>
+                <h2>Add a comment:</h2>
+                <input type="text" onChange={(e) => setComText(e.target.value)} placeholder='add something' className={classes.comment} />
+                <button onClick={handelComment} className={classes.comBtn}>comment</button>
+
+                {uiComment?.map(comment => <div className={classes.commContainer} key={comment._id}>
+                    <div className={classes.commentinfo}>
+                    <img className={classes.commentImg} src={`http://localhost:5000/Images/${comment?.postBy?.userImg}`} alt="" />
+                    <div>
+                        <h2>{comment?.postBy?.name}</h2>
+                        <p>{comment?.text}</p>
+                    </div>
+                    </div>
+                </div>
+                )}
+            </div>
         </div>
     )
 }

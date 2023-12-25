@@ -7,7 +7,7 @@ import unuser from "../../assets/user.jpg"
 import { useEffect, useRef, useState } from "react"
 import axios from "axios"
 
-export default function PostShare({ data, info,fetchPost }) {
+export default function PostShare({ info,fetchPost }) {
 
     const { user } = useGlobalContex()
     const [file, setFile] = useState(null)
@@ -15,7 +15,6 @@ export default function PostShare({ data, info,fetchPost }) {
     const [img, setImg] = useState("")
     const fileRef = useRef(null)
     const [fild, setFild] = useState(false)
-    // console.log(img)
 
     useEffect(() => {
         if (file) {
@@ -27,14 +26,14 @@ export default function PostShare({ data, info,fetchPost }) {
     const uploadPost = async () => {
         const fromdata = new FormData()
         fromdata.append("file", file)
-
         const config = {
             headers: {
                 'content-type': 'multipart/form-data',
             },
         };
         const { data } = await axios.post("http://localhost:5000/upload", fromdata, config)
-        setImg(data)
+        setImg(data.file)
+        console.log(data)
         setFild(true)
     }
 
@@ -117,7 +116,7 @@ export default function PostShare({ data, info,fetchPost }) {
                 </div>
                 <button type="submit" className={classes.sharebtn}>Share</button>
             </div>
-            {fild && <img className={classes.postImg} src={`http://localhost:5000/Images/${img ? img : info.postImg}`} alt="" />}
+            {fild && <img className={classes.postImg} src={`http://localhost:5000/Images/${img ? img : info?.postImg}`} alt="" />}
             <AiFillCloseCircle className={classes.closeSwg} />
         </form>
     )
